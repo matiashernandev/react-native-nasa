@@ -2,8 +2,11 @@ import { StyleSheet, View } from "react-native"
 import { Header } from "../../components/Header"
 import { getApod } from "../../utils/fetch"
 import React, { useEffect, useState } from "react"
+import { CardToday } from "../../components/CardToday"
+import { Apod } from "../../types"
+
 const HomeView = () => {
-  const [apod, setApod] = useState()
+  const [apod, setApod] = useState<Apod>({})
 
   useEffect(() => {
     const loadApod = async () => {
@@ -12,7 +15,7 @@ const HomeView = () => {
         setApod(apod)
       } catch (error) {
         console.log(error)
-        setApod(undefined)
+        setApod({})
       }
     }
     loadApod().catch(null)
@@ -21,6 +24,7 @@ const HomeView = () => {
   return (
     <View style={styles.container}>
       <Header />
+      <CardToday {...apod} />
     </View>
   )
 }
