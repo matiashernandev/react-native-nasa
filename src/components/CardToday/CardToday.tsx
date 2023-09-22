@@ -4,7 +4,6 @@ import { Apod } from "../../types"
 import { CustomButton } from "../CustomButton"
 
 const CardToday: FC<Apod> = ({ date, title, url }) => {
-  console.log(url)
   return (
     <View style={styles.container}>
       <View>

@@ -1,11 +1,18 @@
 import React from "react"
 import { Text, StyleSheet, Pressable } from "react-native"
 
-export default function Button(props: { onPress?: any; title?: string }) {
-  const { onPress, title = "Title" } = props
+interface ButtonProps {
+  onPress?: any
+  title?: string
+  buttonStyle?: object
+  textStyle?: object
+}
+
+export default function Button(props: ButtonProps) {
+  const { onPress, title = "Title", buttonStyle, textStyle } = props
   return (
-    <Pressable style={styles.button} onPress={onPress}>
-      <Text style={styles.text}>{title}</Text>
+    <Pressable style={[styles.button, buttonStyle]} onPress={onPress}>
+      <Text style={[styles.text, textStyle]}>{title}</Text>
     </Pressable>
   )
 }
@@ -22,9 +29,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    //lineHeight: 21,
     fontWeight: "bold",
-    // letterSpacing: 0.25,
     color: "white",
   },
 })
