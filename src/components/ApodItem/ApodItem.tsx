@@ -1,15 +1,27 @@
 import { FC } from "react"
 import { StyleSheet, Text, View } from "react-native"
-import { Apod } from "../../types"
+import { Apod, RootStackParams } from "../../types"
 import { CustomButton } from "../CustomButton"
+import { useNavigation } from "@react-navigation/native"
 
-const ApodItem: FC<Apod> = ({ title, date }) => {
+import { NativeStackNavigationProp } from "@react-navigation/native-stack"
+
+type Props = NativeStackNavigationProp<RootStackParams, "Detail">
+
+const ApodItem: FC<Apod> = ({ title, date, url, explanation }) => {
+  const { navigate } = useNavigation<Props>()
+
+  const handleViewPress = () => {
+    navigate("Detail", { date, title, url, explanation })
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.date}>{date}</Text>
       <View style={styles.buttonContainer}>
         <CustomButton
+          onPress={handleViewPress}
           title="View"
           buttonStyle={{
             backgroundColor: "#0A1854",
@@ -26,6 +38,7 @@ const ApodItem: FC<Apod> = ({ title, date }) => {
     </View>
   )
 }
+
 export default ApodItem
 const styles = StyleSheet.create({
   container: {

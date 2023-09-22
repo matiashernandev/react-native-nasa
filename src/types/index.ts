@@ -10,5 +10,5 @@ export interface Apod {
 
 export type RootStackParams = {
   Home: undefined
-  Detail: undefined
+  Detail: Apod
 }

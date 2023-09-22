@@ -1,9 +1,19 @@
 import { FC } from "react"
 import { View, Text, Image, StyleSheet, Button } from "react-native"
-import { Apod } from "../../types"
+import { Apod, RootStackParams } from "../../types"
 import { CustomButton } from "../CustomButton"
+import { useNavigation } from "@react-navigation/native"
+import { NativeStackNavigationProp } from "@react-navigation/native-stack"
 
-const CardToday: FC<Apod> = ({ date, title, url }) => {
+type Props = NativeStackNavigationProp<RootStackParams, "Detail">
+
+const CardToday: FC<Apod> = ({ date, title, url, explanation }) => {
+  const { navigate } = useNavigation<Props>()
+
+  const handleViewPress = () => {
+    navigate("Detail", { date, title, url, explanation })
+  }
+
   return (
     <View style={styles.container}>
       <View>
@@ -13,7 +23,7 @@ const CardToday: FC<Apod> = ({ date, title, url }) => {
       <Text style={styles.date}>{date}</Text>
       <View style={styles.buttonContainer}>
         {/* <Button title="View" /> */}
-        <CustomButton title="View" />
+        <CustomButton title="View" onPress={handleViewPress} />
       </View>
     </View>
   )
