@@ -1,10 +1,10 @@
 import { SafeAreaView, StyleProp, StyleSheet, ViewStyle } from "react-native"
-import { HomeView } from "./src/views/Home"
+import { Routes } from "./src/routes"
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <HomeView />
+      <Routes />
     </SafeAreaView>
   )
 }

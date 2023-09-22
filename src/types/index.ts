@@ -7,3 +7,8 @@ export interface Apod {
   title?: string
   url?: string
 }
+
+export type RootStackParams = {
+  Home: undefined
+  Detail: undefined
+}

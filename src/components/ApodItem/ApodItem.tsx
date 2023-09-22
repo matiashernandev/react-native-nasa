@@ -12,7 +12,7 @@ const ApodItem: FC<Apod> = ({ title, date }) => {
         <CustomButton
           title="View"
           buttonStyle={{
-            backgroundColor: "",
+            backgroundColor: "#0A1854",
             borderColor: "#ffffff",
             borderWidth: 1,
             paddingVertical: 10,
