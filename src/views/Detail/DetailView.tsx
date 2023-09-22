@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
   },
   content: {
     backgroundColor: "#2c449d",
-    borderRadius: 32,
-    marginVertical: 24,
+    borderRadius: 16,
+    marginVertical: 8,
     padding: 16,
     flex: 1,
   },
@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: "bold",
     fontSize: 22,
-    marginBottom: 16,
   },
   date: {
-    color: "#fff",
+    color: "#09f",
     fontSize: 16,
+    fontWeight: "bold",
   },
   explanationContainer: {
-    marginVertical: 16,
+    marginVertical: 8,
   },
 
   explanation: {

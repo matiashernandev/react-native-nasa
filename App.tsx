@@ -1,10 +1,12 @@
 import { SafeAreaView, StyleProp, StyleSheet, ViewStyle } from "react-native"
 import { Routes } from "./src/routes"
+import { StatusBar } from "expo-status-bar"
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Routes />
+      <StatusBar hidden />
     </SafeAreaView>
   )
 }

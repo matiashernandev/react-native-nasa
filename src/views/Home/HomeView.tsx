@@ -54,7 +54,7 @@ export default HomeView
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
     backgroundColor: "#0A1854",
+    paddingHorizontal: 16,
   },
 })

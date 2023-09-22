@@ -2,10 +2,10 @@ import { View, Text, Image, StyleSheet } from "react-native"
 const Header = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.leftContainer}>
-        <Text style={styles.title}>Explore</Text>
+      <View>
+        <Text style={styles.title}>Cries in React Native</Text>
       </View>
-      <View style={styles.rightContainer}>
+      <View>
         <Image
           style={styles.image}
           source={require("../../../assets/nasa-logo.png")}
@@ -17,10 +17,13 @@ const Header = () => {
 export default Header
 
 const styles = StyleSheet.create({
-  container: { flexDirection: "row", alignItems: "center" },
-  leftContainer: { flex: 1, alignItems: "flex-start" },
-  title: { fontSize: 20, color: "#fff" },
-  rightContainer: { flex: 1, alignItems: "flex-end" },
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 8,
+  },
+  title: { fontSize: 20, color: "#fff", fontWeight: "bold" },
   image: {
     width: 60,
     height: 60,

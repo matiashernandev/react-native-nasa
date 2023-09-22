@@ -33,10 +33,9 @@ export default CardToday
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#2c449d",
-    marginVertical: 16,
+    marginVertical: 8,
     borderRadius: 16,
     padding: 16,
-    marginHorizontal: 24,
   },
   image: {
     borderColor: "#fff",
@@ -57,8 +56,5 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     alignItems: "flex-end",
-  },
-  btn: {
-    backgroundColor: "red",
   },
 })
