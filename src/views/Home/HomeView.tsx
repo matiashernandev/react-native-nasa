@@ -25,7 +25,7 @@ const HomeView = () => {
     const load5DaysApod = async () => {
       try {
         const date = new Date()
-        const todaysDate = format(date, "yyyy-MM-dd")
+        const todaysDate = format(sub(date, { days: 1 }), "yyyy-MM-dd")
         const fiveDaysAgoDate = format(sub(date, { days: 5 }), "yyyy-MM-dd")
 
         const fiveApod = await getApod(

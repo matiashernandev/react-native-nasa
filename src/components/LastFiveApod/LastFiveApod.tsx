@@ -8,9 +8,10 @@ const LastFiveApod: FC<{ lastFiveApod: Apod[] }> = ({ lastFiveApod }) => {
     <View style={styles.container}>
       <Text style={styles.title}>Last 5 Days</Text>
       <ScrollView style={styles.content}>
-        {lastFiveApod?.map((apod) => (
-          <ApodItem key={apod.title} {...apod} />
-        ))}
+        {Array.isArray(lastFiveApod) &&
+          lastFiveApod
+            .reverse()
+            ?.map((apod) => <ApodItem key={apod.title} {...apod} />)}
       </ScrollView>
     </View>
   )
